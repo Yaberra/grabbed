@@ -1,6 +1,6 @@
 # grabbed
 
-This app allows the user to find a resturaunt near them and make a reservation.
+This application allows the user to find a restaurant near them and make a reservation.
 
 USER STORY:
 -----------------------------------------------------------------------------------------
@@ -14,11 +14,11 @@ USER STORY:
 
 PROGRAMMING 
 
-- This is a web-based mobile app that will use the Yelp and OpenTable API’s. 
+- This is a web-based mobile application  that will use the Yelp and OpenTable API’s. 
 
 - New library or technology user Geo-location restaurant finder 
 
-- It’s a simple app that will be built using HTML, CSS, JavaScript, jQuery, AJAX and JSON. 
+- It’s a simple application that will be built using HTML, CSS, JavaScript, jQuery, AJAX and JSON. 
 ------------------------------------------------------------------------------------------------
 
 RUNNING THE APPLICATION 
@@ -27,7 +27,7 @@ RUNNING THE APPLICATION
 
 - If user confirms the app will access the location of the user 
 
-- Based on location of the user access the app will access Yelp API to pull data for restuarants closest to the user
+- Based on location of the user access the app will access Yelp API to pull data for restaurants closest to the user
 
 - The app will use the database to access and store the specifics like data, image, rating, address, type, price, special offers, and website link to restaurant 
 
@@ -35,5 +35,4 @@ RUNNING THE APPLICATION
 
 - If a user decides to make a reservation a button is included for Open Table API forms to enter personal information and book a table.  
 
-Team members: StaShaun, Austin, Yeti
 Team members: StaShaun, Austin, Yeti

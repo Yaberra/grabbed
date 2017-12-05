@@ -1,0 +1,47 @@
+#backgroundImage {
+	width:100%;
+	z-index: -1;
+	position: absolute;
+
+}
+
+#logo{ 
+	background-color: rgb(202,245,146);
+
+}
+#geoLocator{
+	background-color: rgb(103,120,85);
+
+}
+#images1{
+	background-color: rgb(135,178,176);
+
+}
+
+#images1 {
+height: 50px;
+
+}
+
+#first {
+	
+
+}
+#second {
+	
+
+}
+#third {
+	
+
+}
+
+.restuarant {
+
+	width: 100px;
+	height:100px;
+	background-color:  rgb(251,43,100);{
+
+		2
+	}
+}

@@ -1,38 +1,61 @@
+body {
+
+	background-color: rgb(145,204,65);
+}
+
 #backgroundImage {
 	width:100%;
-	z-index: -1;
+	height: 100%;
 	position: absolute;
 
 }
 
-#logo{ 
-	background-color: rgb(202,245,146);
-
-}
-#geoLocator{
-	background-color: rgb(103,120,85);
-
-}
-#images1{
-	background-color: rgb(135,178,176);
+h1 {
+	font-family: 'Fascinate Inline', cursive;
+	font-size: 70px;
+	margin-left:20px;
 
 }
 
-#images1 {
-height: 50px;
+h3 {
+	margin-left: 20px;
+	font-family: 'Kaushan Script', cursive;
+	font-size: 30px;
+
+}
+#image {
+	display: inline-block;
 
 }
 
-#first {
+#content {
+
+	display: inline-block;
+}
+
+#location-icons{
+	margin-left: 200px;
+
+}
+
+#Box {
+margin-left: 125px;
+border-color: rgb(145,204,65);
+border:2px:solid;
 	
-
 }
-#second {
-	
 
+#thumbnails {
+	margin-left: 0;
 }
-#third {
-	
+
+h5 {
+	text-align: center
+}
+
+content {
+
+	padding-left: 100px;
 
 }
 
@@ -42,6 +65,12 @@ height: 50px;
 	height:100px;
 	background-color:  rgb(251,43,100);{
 
-		2
+		
 	}
+
+
+
+
+
+
 }

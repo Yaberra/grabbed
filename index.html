@@ -18,13 +18,14 @@
     <h1>Grabbed</h1> 
     <br><br>
     <div class="container">
-     <img id="location-icons" src="./assets/images/pizza-location.png" style="width:50px; align-items:center;">            
+        <div id="map">
+            <img id="image" src="./assets/images/pizza-location.png" style="width:50px; align-items:center;">    
             <h3>Click to find restaurant near you</h3>
-    </div>
+        </div>
 
     <br><br><br><br><br>
      <div class="container">
-        <div class="row" id="box3"></div>
+        <div class="row" id="searchResults"></div>
             <img src="./assets/images/people-eating.jpg " id="thumbnails" style="width: 170px;">
                 <div id="content">
                     <main>
@@ -41,6 +42,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./assets/javascript/grabbed.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcDlEP58ISYqupag5wJvKrcgjlf8g28CA" type="text/javascript"></script>
 
     <!-- Prompt to confirm access to location -->
     <!-- Access Geolocation -->

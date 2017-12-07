@@ -25,7 +25,7 @@ $(document).ready(function() {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                //getRestaurants(pos)
+                getRestaurants(pos)
                 infoWindow.setPosition(pos);
                 infoWindow.setContent('Location found.');
                 infoWindow.open(map);
@@ -57,8 +57,21 @@ $(document).ready(function() {
 // This is where we make the AJAX call to Yelp. 
 // We need to pass the google api location data to get restaurant location
 
-//function getRestaurants(pos) {
-
+function getRestaurants(pos) {
+    var settings ={ "async": true,
+  "crossDomain": true,
+  "url": 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=Atlanta',
+  "method": "GET",
+  "headers": {
+    "authorization": "Bearer uM5_8KBZq5cZd5JzuR9SwUTy4KsRUE_qcnwuSjmBjloyvJ1ZU95AkFLcsccNSLQ7EX1WvndHjcfFXAzd40aevtIW0bfJvJQcqr1faSjidDUijEIb7d9Fycri1yAoWnYx",
+    "cache-control": "no-cache", 
+  }
+  }
+      $.ajax(settings).done(res => {
+        console.log('working in cb')
+        console.log(res)
+      })
+}
 
 //var settings = {
 //   "async": true,

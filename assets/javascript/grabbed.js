@@ -50,11 +50,16 @@ $(document).ready(function() {
 
     $(document).on('click', function() {
         console.log(pos)
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 4a54338bef02a1cba359968a38f6cb8e54794dfa
     })
 });
 
 function getRestaurants(pos) {
+<<<<<<< HEAD
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -81,6 +86,45 @@ function getRestaurants(pos) {
 
                 //    var search = response.data;
                 //    for(i=0;i<results.length; i++);
+=======
+    var settings ={ "async": true,
+  "crossDomain": true,
+
+  "url": `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=${pos.lat}&longitude=${pos.lng}`,
+
+  "url": 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=Atlanta',
+
+  "method": "GET",
+  "headers": {
+    "authorization": "Bearer uM5_8KBZq5cZd5JzuR9SwUTy4KsRUE_qcnwuSjmBjloyvJ1ZU95AkFLcsccNSLQ7EX1WvndHjcfFXAzd40aevtIW0bfJvJQcqr1faSjidDUijEIb7d9Fycri1yAoWnYx",
+    "cache-control": "no-cache", 
+  }
+  }
+      $.ajax(settings).done(res => {
+        console.log('working in cb')
+        console.log(res)
+      })
+}
+
+//var settings = {
+//   "async": true,
+//   "crossDomain": true,
+//   "url": "https://api.yelp.com/v3/businesses/search?term=restaurant&location=seattle",
+//   "method": "GET",
+//   "headers": {
+//     "Authorization": "Bearer uM5_8KBZq5cZd5JzuR9SwUTy4KsRUE_qcnwuSjmBjloyvJ1ZU95AkFLcsccNSLQ7EX1WvndHjcfFXAzd40aevtIW0bfJvJQcqr1faSjidDUijEIb7d9Fycri1yAoWnYx",
+//     "Cache-Control": "no-cache",
+//     "Postman-Token": "00a28000-9864-3346-e41b-49360c9c6c25"
+//   }
+// }
+
+// $.ajax(settings).done(function (response) {
+//   console.log(response);
+// });
+    
+    //    var search = response.data;
+    //    for(i=0;i<results.length; i++);
+>>>>>>> 4a54338bef02a1cba359968a38f6cb8e54794dfa
 
                 //    var name = // response.restaurant.name  
                 //    var address = // response.restaurant.location.display_address 

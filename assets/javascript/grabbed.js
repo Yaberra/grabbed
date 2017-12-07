@@ -67,7 +67,7 @@ function getRestaurants(pos) {
     }
     $.ajax(settings).done(res => {
                 console.log('working in cb')
-                console.log(res)
+                // console.log(res)
 
                 //    var searchResults = $(this).data("search");
 

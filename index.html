@@ -10,4 +10,61 @@
 </body>
 <script src="jquery-3.2.1.min.js"></script>
 <script type="text/javascript"></script>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grabbed</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <img src="./assets/images/utensils.jpeg " id="backgroundImage" style="z-index: -1;">
+    <h1>Grabbed</h1>
+    <br>
+    <br>
+    <div class="container">
+        <div id="map">
+            <img id="image" src="./assets/images/pizza-location.png" style="width:50px; align-items:center;">
+            <h3>Click to find restaurant near you</h3>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row" id="searchResults"></div>
+            <img src="./assets/images/people-eating.jpg " id="thumbnails" style="width: 170px;">
+            <div id="content">
+                <main>
+                    <h4>Name</h4>
+                    <p> Address, Rating, Price, Reviews,Special Offers, Contact, Make a reservation</p>
+                </main>
+            </div>
+        </div>
+    </div>
+    <!-- Logo and navbar -->
+    <!-- create div to display search results -->
+    <!-- create div for open table reservations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcDlEP58ISYqupag5wJvKrcgjlf8g28CA" type="text/javascript"></script>
+    <script src="./assets/javascript/grabbed.js"></script>
+    <!-- Prompt to confirm access to location -->
+    <!-- Access Geolocation -->
+    <!-- Create a URL to search Yelp for restuarant closest to user location. Limit to 10.-->
+    <!-- Perform an AJAX request with the queryURL -->
+    <!-- After data comes back from the request -->
+    <!-- Grab and store the data-properties to display -->
+    <!-- Create and store date in div tags and classes -->
+    <!-- Display the results in HTML -->
+    <!-- Create a URL to access Open Table forms to make a reservation -->
+</body>
+
 </html>

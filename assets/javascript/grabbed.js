@@ -60,7 +60,11 @@ $(document).ready(function() {
 function getRestaurants(pos) {
     var settings ={ "async": true,
   "crossDomain": true,
+
   "url": `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=${pos.lat}&longitude=${pos.lng}`,
+
+  "url": 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=Atlanta',
+
   "method": "GET",
   "headers": {
     "authorization": "Bearer uM5_8KBZq5cZd5JzuR9SwUTy4KsRUE_qcnwuSjmBjloyvJ1ZU95AkFLcsccNSLQ7EX1WvndHjcfFXAzd40aevtIW0bfJvJQcqr1faSjidDUijEIb7d9Fycri1yAoWnYx",

@@ -14,7 +14,7 @@ $( document ).ready(function() {
     	zoom: 6
   		});
   		infoWindow = new google.maps.InfoWindow;
-
+      
  // Try HTML5 geolocation.
 
   	if (navigator.geolocation) {
@@ -44,12 +44,12 @@ $( document ).ready(function() {
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
-
+        initMap();
   });
 
-function getYelpRestaurantLocation(){
+// function getYelpRestaurantLocation(){
 
-}
+// }
 
 
 

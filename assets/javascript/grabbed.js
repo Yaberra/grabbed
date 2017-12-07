@@ -25,7 +25,7 @@ $(document).ready(function() {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                getRestaurants(pos)
+                //getRestaurants(pos)
                 infoWindow.setPosition(pos);
                 infoWindow.setContent('Location found.');
                 infoWindow.open(map);
@@ -50,25 +50,32 @@ $(document).ready(function() {
 
     $(document).on('click', function() {
         console.log(pos)
-        console.log(navigator.geolocation)
+        
     })
 });
 
 // This is where we make the AJAX call to Yelp. 
 // We need to pass the google api location data to get restaurant location
 
-function getRestaurants(pos) {
+//function getRestaurants(pos) {
 
-    //    var searchResults = $(this).data("search");
 
-    //    var queryURL ="https://api.yelp.com/v3/businesses/restaurants      "
-    //    }
+//var settings = {
+//   "async": true,
+//   "crossDomain": true,
+//   "url": "https://api.yelp.com/v3/businesses/search?term=restaurant&location=seattle",
+//   "method": "GET",
+//   "headers": {
+//     "Authorization": "Bearer uM5_8KBZq5cZd5JzuR9SwUTy4KsRUE_qcnwuSjmBjloyvJ1ZU95AkFLcsccNSLQ7EX1WvndHjcfFXAzd40aevtIW0bfJvJQcqr1faSjidDUijEIb7d9Fycri1yAoWnYx",
+//     "Cache-Control": "no-cache",
+//     "Postman-Token": "00a28000-9864-3346-e41b-49360c9c6c25"
+//   }
+// }
 
-    //    $.ajax({
-    //    url:queryURL
-    //    method;"GET"
-    //    }). done(function)(response){
-
+// $.ajax(settings).done(function (response) {
+//   console.log(response);
+// });
+    
     //    var search = response.data;
     //    for(i=0;i<results.length; i++);
 

@@ -5,6 +5,7 @@ $(document).ready(function() {
     // locate you.
 
     var map, infoWindow, pos;
+    var resultsArray = [];
 
     function initMap(lat, lng) {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -49,12 +50,13 @@ $(document).ready(function() {
         console.log(pos)
 
     })
-});
+
 
 // This is where we make the AJAX call to Yelp. 
 // We need to pass the google api location data to get restaurant location
 
-    function getRestaurants(pos) {
+    function getRestaurants(pos) { 
+        // console.log("running the getRestaurants function");
         var settings = {
         "async": true,
         "crossDomain": true,
@@ -70,29 +72,41 @@ $(document).ready(function() {
         }
     }
     $.ajax(settings).done(res => {
-        console.log('working in cb')
-        console.log(res)
+        console.log(res);
+        results = res.businesses;
+        for (var i = 0; i < results.length; i++){
+            // console.log(results[i].name)
+
+        var imageThumbnail = $("<div class='col-md-4'>");
+        var restaurantImage = $("<img>");
+        var imageUrl = results[i].image_url;
+        restaurantImage.attr("src", imageUrl)
+        console.log(imageUrl)     
+        var businessesSearchResults = $("<div class='col-md-8'>");
+        var name = results[i].name;
+        console.log(name);
+        var rating = results[i].rating;
+        console.log(rating);
+        var phone = results[i].display_phone;
+        console.log(phone)
+        var address = results[i].location.display_address;
+        console.log(address);
+        var website = results[i].url;
+        console.log(website);
+
+    
+        }
     })
 }
 
-    var results = res.data;
-    for (var i = 0; i < results.length; i++) {
+});
 
-    var imageThumbnail = $("<div class='col-md-4'>");
-    var restaurantImage = $("<img>");
-    var imageUrl = results[i].image_url;
-    restaurantImage.attr("src", imageUrl)
+   
 
-    var businessesSearchResults = $("<div class='col-md-8'>");
-    var name = results[i].name;
-    console.log(name);
-    var rating = $("<p>").text("Rating: " + rating);
-    var phone = results[i].display_phone;
-    var address = results[i].display_address;
-    var website = results[i].url;
+    
 
 
-}
+
 
 
 

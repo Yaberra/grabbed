@@ -4,7 +4,6 @@ $(document).ready(function() {
     // failed.", it means you probably did not give permission for the browser to
     // locate you.
 
-
     var map, infoWindow, pos;
 
     function initMap(lat, lng) {
@@ -92,4 +91,9 @@ $(document).ready(function() {
     var address = results[i].display_address;
     var website = results[i].url;
 
+
 }
+
+
+
+

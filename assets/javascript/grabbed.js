@@ -1,13 +1,11 @@
 $(document).ready(function() {
-    console.log("test!");
-
     // This example requires that you consent to location sharing when
     // prompted by your browser. If you see the error "The Geolocation service
     // failed.", it means you probably did not give permission for the browser to
     // locate you.
 
-
     var map, infoWindow, pos;
+    var resultsArray = [];
 
     function initMap(lat, lng) {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -25,7 +23,7 @@ $(document).ready(function() {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                // getRestaurants(pos)
+                getRestaurants(pos)
                 infoWindow.setPosition(pos);
                 infoWindow.setContent('Location found.');
                 infoWindow.open(map);
@@ -50,20 +48,23 @@ $(document).ready(function() {
 
     $(document).on('click', function() {
         console.log(pos)
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 4a54338bef02a1cba359968a38f6cb8e54794dfa
     })
-});
 
-function getRestaurants(pos) {
-<<<<<<< HEAD
-    var settings = {
+
+// This is where we make the AJAX call to Yelp. 
+// We need to pass the google api location data to get restaurant location
+
+    function getRestaurants(pos) { 
+        // console.log("running the getRestaurants function");
+        var settings = {
         "async": true,
         "crossDomain": true,
-        "url": 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurant&latitude=&longitude',
+
+        "url": `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=${pos.lat}&longitude=${pos.lng}`,
+
+        "url": 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=Atlanta',
+
         "method": "GET",
         "headers": {
             "authorization": "Bearer uM5_8KBZq5cZd5JzuR9SwUTy4KsRUE_qcnwuSjmBjloyvJ1ZU95AkFLcsccNSLQ7EX1WvndHjcfFXAzd40aevtIW0bfJvJQcqr1faSjidDUijEIb7d9Fycri1yAoWnYx",
@@ -71,70 +72,38 @@ function getRestaurants(pos) {
         }
     }
     $.ajax(settings).done(res => {
-                console.log('working in cb')
-                // console.log(res)
+        console.log(res);
+        results = res.businesses;
+        for (var i = 0; i < results.length; i++){
+            // console.log(results[i].name)
 
-                //    var searchResults = $(this).data("search");
+        var imageThumbnail = $("<div class='col-md-4'>");
+        var restaurantImage = $("<img>");
+        var imageUrl = results[i].image_url;
+        restaurantImage.attr("src", imageUrl)
+        console.log(imageUrl)     
+        var businessesSearchResults = $("<div class='col-md-8'>");
+        var name = results[i].name;
+        console.log(name);
+        var rating = results[i].rating;
+        console.log(rating);
+        var phone = results[i].display_phone;
+        console.log(phone)
+        var address = results[i].location.display_address;
+        console.log(address);
+        var website = results[i].url;
+        console.log(website);
 
-                //    var queryURL ="https://api.yelp.com/v3/businesses/restaurants      "
-                //    }
-
-                //    $.ajax({
-                //    url:queryURL
-                //    method;"GET"
-                //    }). done(function)(response){
-
-                //    var search = response.data;
-                //    for(i=0;i<results.length; i++);
-=======
-    var settings ={ "async": true,
-  "crossDomain": true,
-
-  "url": `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=${pos.lat}&longitude=${pos.lng}`,
-
-  "url": 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=Atlanta',
-
-  "method": "GET",
-  "headers": {
-    "authorization": "Bearer uM5_8KBZq5cZd5JzuR9SwUTy4KsRUE_qcnwuSjmBjloyvJ1ZU95AkFLcsccNSLQ7EX1WvndHjcfFXAzd40aevtIW0bfJvJQcqr1faSjidDUijEIb7d9Fycri1yAoWnYx",
-    "cache-control": "no-cache", 
-  }
-  }
-      $.ajax(settings).done(res => {
-        console.log('working in cb')
-        console.log(res)
-      })
+    
+        }
+    })
 }
 
-//var settings = {
-//   "async": true,
-//   "crossDomain": true,
-//   "url": "https://api.yelp.com/v3/businesses/search?term=restaurant&location=seattle",
-//   "method": "GET",
-//   "headers": {
-//     "Authorization": "Bearer uM5_8KBZq5cZd5JzuR9SwUTy4KsRUE_qcnwuSjmBjloyvJ1ZU95AkFLcsccNSLQ7EX1WvndHjcfFXAzd40aevtIW0bfJvJQcqr1faSjidDUijEIb7d9Fycri1yAoWnYx",
-//     "Cache-Control": "no-cache",
-//     "Postman-Token": "00a28000-9864-3346-e41b-49360c9c6c25"
-//   }
-// }
+});
 
-// $.ajax(settings).done(function (response) {
-//   console.log(response);
-// });
+   
+
     
-    //    var search = response.data;
-    //    for(i=0;i<results.length; i++);
->>>>>>> 4a54338bef02a1cba359968a38f6cb8e54794dfa
-
-                //    var name = // response.restaurant.name  
-                //    var address = // response.restaurant.location.display_address 
-                //    var phone = // response.restaurant.phone 
-                //    var rating =// response.restaurant.rating 
-                //    var review = // response.restaurant.review_count  
-                //    var price = // response.restaurant.price 
-                //    var deals= // response.restaurant.deals
-                //    var open =  // response.restaurant.open_now 
-                //    var website = // response.restaurant.url 
 
 
 
@@ -142,10 +111,3 @@ function getRestaurants(pos) {
 
 
 
-
-
-
-
-
-
-                // });

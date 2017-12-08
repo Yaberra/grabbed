@@ -25,7 +25,7 @@ $(document).ready(function() {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                getRestaurants(pos)
+                // getRestaurants(pos)
                 infoWindow.setPosition(pos);
                 infoWindow.setContent('Location found.');
                 infoWindow.open(map);
@@ -50,14 +50,43 @@ $(document).ready(function() {
 
     $(document).on('click', function() {
         console.log(pos)
+<<<<<<< HEAD
+
+=======
         
+>>>>>>> 4a54338bef02a1cba359968a38f6cb8e54794dfa
     })
 });
 
-// This is where we make the AJAX call to Yelp. 
-// We need to pass the google api location data to get restaurant location
-
 function getRestaurants(pos) {
+<<<<<<< HEAD
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurant&latitude=&longitude',
+        "method": "GET",
+        "headers": {
+            "authorization": "Bearer uM5_8KBZq5cZd5JzuR9SwUTy4KsRUE_qcnwuSjmBjloyvJ1ZU95AkFLcsccNSLQ7EX1WvndHjcfFXAzd40aevtIW0bfJvJQcqr1faSjidDUijEIb7d9Fycri1yAoWnYx",
+            "cache-control": "no-cache",
+        }
+    }
+    $.ajax(settings).done(res => {
+                console.log('working in cb')
+                // console.log(res)
+
+                //    var searchResults = $(this).data("search");
+
+                //    var queryURL ="https://api.yelp.com/v3/businesses/restaurants      "
+                //    }
+
+                //    $.ajax({
+                //    url:queryURL
+                //    method;"GET"
+                //    }). done(function)(response){
+
+                //    var search = response.data;
+                //    for(i=0;i<results.length; i++);
+=======
     var settings ={ "async": true,
   "crossDomain": true,
 
@@ -95,19 +124,17 @@ function getRestaurants(pos) {
     
     //    var search = response.data;
     //    for(i=0;i<results.length; i++);
+>>>>>>> 4a54338bef02a1cba359968a38f6cb8e54794dfa
 
-    //    var name = // response.restaurant.name  
-    //    var address = // response.restaurant.location.display_address 
-    //    var phone = // response.restaurant.phone 
-    //    var rating =// response.restaurant.rating 
-    //    var review = // response.restaurant.review_count  
-    //    var price = // response.restaurant.price 
-    //    var deals= // response.restaurant.deals
-    //    var open =  // response.restaurant.open_now 
-    //    var website = // response.restaurant.url 
-
-
-
+                //    var name = // response.restaurant.name  
+                //    var address = // response.restaurant.location.display_address 
+                //    var phone = // response.restaurant.phone 
+                //    var rating =// response.restaurant.rating 
+                //    var review = // response.restaurant.review_count  
+                //    var price = // response.restaurant.price 
+                //    var deals= // response.restaurant.deals
+                //    var open =  // response.restaurant.open_now 
+                //    var website = // response.restaurant.url 
 
 
 
@@ -118,4 +145,7 @@ function getRestaurants(pos) {
 
 
 
-    // });
+
+
+
+                // });

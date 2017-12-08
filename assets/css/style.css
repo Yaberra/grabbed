@@ -3,10 +3,21 @@ body {
     background-color: rgb(145, 204, 65);
 }
 
-h1 {
+h1 { 
+
+    color:#696969;
     font-family: 'Fascinate Inline', cursive;
     font-size: 70px;
-    margin-left: 230px;
+    display: inline-block;
+    margin-top: -15px;
+    margin-left: 50px;
+   
+}
+
+h4 {
+    display: inline-block;
+    margin-bottom: 15;
+    color:#696969;
 }
 
 #backgroundImage {
@@ -20,21 +31,22 @@ h1 {
 }
 
 #map {
+    margin-top: 50px;
     height: 300px;
-    width: 650px;
+    width: 600px;
     border: 2px solid;
     color: rgb(145, 204, 65);
 }
 
 h3 {
-    margin-left: 100px;
+    margin-left: 5px;
     font-family: 'Kaushan Script', cursive;
     font-size: 30px;
 }
 
 #image {
     display: inline-block;
-    margin-left: 270px;
+    border-image: 2px solid color:#696969;
 }
 
 #content {
@@ -60,6 +72,7 @@ h5 {
 content {
 
     padding-left: 100px;
+    display: inline-block;
 }
 
 .restuarant {

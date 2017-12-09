@@ -9,6 +9,7 @@ h1 {
     font-size: 70px;
     display: inline-block;
     margin-top: -15px;
+
     margin-left: 180px;
    
 }
@@ -17,7 +18,9 @@ h4 {
     display: inline-block;
     margin-bottom: 15;
     color:#696969;
+
     color: rgb(145, 204, 65);
+
 }
 
 #backgroundImage {
@@ -80,5 +83,9 @@ content {
     width: 100px;
     height: 100px;
     background-color: rgb(251, 43, 100);
+
     
     }
+
+ 
+

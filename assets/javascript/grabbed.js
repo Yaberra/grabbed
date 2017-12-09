@@ -81,6 +81,7 @@ $(document).ready(function() {
         var restaurantImage = $("<img>");
         var imageUrl = results[i].image_url;
         restaurantImage.attr("src", imageUrl)
+
         console.log(imageUrl) 
         var businessesSearchResults = $("<div class='col-md-8'>");
         var name = results[i].name;
@@ -109,7 +110,22 @@ $(document).ready(function() {
        $("restuarantImage").text(imageThumbnail);
        $("content").text(businessesSearchResults);
 
-        }
+
+        console.log(imageUrl)     
+        var businessesSearchResults = $("<div class='col-md-8'>");
+        var name = results[i].name;
+        console.log(name);
+        var rating = results[i].rating;
+        console.log(rating);
+        var phone = results[i].display_phone;
+        console.log(phone)
+        var address = results[i].location.display_address;
+        console.log(address);
+        var website = results[i].url;
+        console.log(website);
+
+    
+       }
     })
 }
 

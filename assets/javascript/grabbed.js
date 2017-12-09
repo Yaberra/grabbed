@@ -81,20 +81,34 @@ $(document).ready(function() {
         var restaurantImage = $("<img>");
         var imageUrl = results[i].image_url;
         restaurantImage.attr("src", imageUrl)
-        console.log(imageUrl)     
+        console.log(imageUrl) 
         var businessesSearchResults = $("<div class='col-md-8'>");
         var name = results[i].name;
+        var pOne = $("<p>").text("Name: " + name);
         console.log(name);
         var rating = results[i].rating;
+        var ptwo = $("<p>").text("Rating: " + rating);
         console.log(rating);
         var phone = results[i].display_phone;
+        var pthree= $("<p>").text("Phone: " + phone);
         console.log(phone)
         var address = results[i].location.display_address;
+        var pfour = $("<p>").text("Address: " + address);
         console.log(address);
         var website = results[i].url;
+        var pfive = $("<p>").text("Website: " + website);
         console.log(website);
 
-    
+        imageThumbnail.append(restaurantImage);
+        businessesSearchResults.html(pOne);
+        businessesSearchResults.html(ptwo);
+        businessesSearchResults.html(pthree);
+        businessesSearchResults.html(pfour);
+        businessesSearchResults.html(pfive);
+       
+       $("restuarantImage").text(imageThumbnail);
+       $("content").text(businessesSearchResults);
+
         }
     })
 }

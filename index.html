@@ -16,6 +16,7 @@
 
 <body>
     <img src="./assets/images/utensils.jpeg " id="backgroundImage" style="z-index: -1; height: 1500px;>
+    /*<!-- Logo and navbar -->*/
     <nav class="navbar navbar-default navbar-fixed-top">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="mainnavbar">
             <span class="icon-bar"></span>
@@ -32,40 +33,22 @@
             </div>
         </div>  
     </nav>
-   
-    <div class="container">
-        <div id="map">
-            <img id="image" src="./assets/images/pizza-location.png" style="width:50px; align-items:center;">
-            <h3>Click to find restaurant near you</h3>
-        </div>
-        <br>
-        <br>
-        <div class="container">
-            <div class="row" id="restuarantImage" style="width:180px"></div>
-            <img src="./assets/images/people-eating.jpg " id="thumbnails" style="width: 170px;">
-            <div id="content">
-                <main>
-                    <h4>Name</h4>
-                    <p> Address, Rating, Price, Reviews,Special Offers, Contact, Make a reservation</p>
-                </main>
-            </div>
-        </div>
+<!-- create div to display search results -->
+<div class="container">
+    <div id="map">
+        <img id="image" src="./assets/images/pizza-location.png" style="width:50px; align-items:center;">
+        <h3>Click to find restaurant near you</h3>
     </div>
-    <!-- Logo and navbar -->
-    <!-- create div to display search results -->
-    <!-- create div for open table reservations -->
+    <br>
+    <br>
+    <div class="container">
+        <div class="row" id="restuarantImage" style="width:200px"></div>
+        <div id="content"></div>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcDlEP58ISYqupag5wJvKrcgjlf8g28CA" type="text/javascript"></script>
     <script src="./assets/javascript/grabbed.js"></script>
-    <!-- Prompt to confirm access to location -->
-    <!-- Access Geolocation -->
-    <!-- Create a URL to search Yelp for restuarant closest to user location. Limit to 10.-->
-    <!-- Perform an AJAX request with the queryURL -->
-    <!-- After data comes back from the request -->
-    <!-- Grab and store the data-properties to display -->
-    <!-- Create and store date in div tags and classes -->
-    <!-- Display the results in HTML -->
-    <!-- Create a URL to access Open Table forms to make a reservation -->
-</body>
-
+    
+    </body>
 </html>

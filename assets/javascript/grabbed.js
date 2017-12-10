@@ -51,7 +51,6 @@ $(document).ready(function() {
 
     })
 
-
 // This is where we make the AJAX call to Yelp. 
 // We need to pass the google api location data to get restaurant location
 
@@ -75,36 +74,45 @@ $(document).ready(function() {
         console.log(res);
         results = res.businesses;
         for (var i = 0; i < results.length; i++){
-            // console.log(results[i].name)
-
+            
         var imageThumbnail = $("<div class='col-md-4'>");
         var restaurantImage = $("<img>");
         var imageUrl = results[i].image_url;
-        restaurantImage.attr("src", imageUrl)
-        console.log(imageUrl) 
+        restaurantImage.attr("src", imageUrl);
+        console.log(imageUrl);
+        restaurantImage.text(imageUrl);
+        console.log(restaurantImage);
+        
         var businessesSearchResults = $("<div class='col-md-8'>");
         var name = results[i].name;
-        var pOne = $("<p>").text("Name: " + name);
         console.log(name);
+        var name1 = $("<p>").text("Name: " + name);
+        businessesSearchResults.append(name1);
+        console.log(name1);
+        
         var rating = results[i].rating;
-        var ptwo = $("<p>").text("Rating: " + rating);
         console.log(rating);
-        var phone = results[i].display_phone;
-        var pthree= $("<p>").text("Phone: " + phone);
-        console.log(phone)
-        var address = results[i].location.display_address;
-        var pfour = $("<p>").text("Address: " + address);
-        console.log(address);
-        var website = results[i].url;
-        var pfive = $("<p>").text("Website: " + website);
-        console.log(website);
+        var rating2 = $("<p>").text("Rating: " + rating);
+        businessesSearchResults.append(rating2);
+        console.log(rating2);
 
-        imageThumbnail.append(restaurantImage);
-        businessesSearchResults.html(pOne);
-        businessesSearchResults.html(ptwo);
-        businessesSearchResults.html(pthree);
-        businessesSearchResults.html(pfour);
-        businessesSearchResults.html(pfive);
+        var phone = results[i].display_phone;
+        console.log(phone);
+        var phone3 = $("<p>").text("Phone: " + phone);
+        businessesSearchResults.append(phone3);
+        console.log(phone3);
+
+        var address = results[i].location.display_address;
+        console.log(address);
+        var address4 = $("<p>").text("Address: " + address);
+        businessesSearchResults.append(address4);
+        console.log(address4);
+
+        var website = results[i].url;
+        console.log(website);
+        var website5 = $("<p>").text("Website: " + website);
+        businessesSearchResults.append(website5);
+        console.log(website5);
        
        $("restuarantImage").text(imageThumbnail);
        $("content").text(businessesSearchResults);

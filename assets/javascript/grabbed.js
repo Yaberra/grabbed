@@ -4,9 +4,9 @@ $(document).ready(function() {
     // failed.", it means you probably did not give permission for the browser to
     // locate you.
 
-    var map, infoWindow, pos; 
+    var map, infoWindow, pos;
     var resultsArray = [];
-    var locations =[]
+    var locations = []
 
     function initMap(lat, lng) {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -37,8 +37,6 @@ $(document).ready(function() {
             handleLocationError(false, infoWindow, map.getCenter());
         }
 
-
-
     }
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -55,10 +53,6 @@ $(document).ready(function() {
 
     })
 
-
-
-     // function getLocationMarker(pos, latitude, longitude);
-     
 
     // Make an AJAX call to Yelp to locate restaurants closest to the google api location indicator 
     // We need to pass the google api location data to get restaurant location
@@ -84,38 +78,36 @@ $(document).ready(function() {
         // Grab and store the data-properties to display 
         // Create and store date in div tags and classes
 
-
-
         $.ajax(settings).done(res => {
             console.log(res);
             results = res.businesses;
 
             for (var i = 0; i < results.length; i++) {
 
-               var coorObj = results[i].coordinates
-             
-            
+                var coorObj = results[i].coordinates
+
+
                 // console.log(results[i].coordinates)
                 var restaurantImage = $("<img>");
                 var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(coorObj.latitude, coorObj.longitude),
-            map: map
-        });
+                    position: new google.maps.LatLng(coorObj.latitude, coorObj.longitude),
+                    map: map
+                });
 
-        google.maps.event.addListener(marker, 'click', (function (marker, i) {
-            return function () {
-                infowindow.setContent(locations[i][0]);
-                infowindow.open(map, marker);
-            }
-        })(marker, i));
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
                 var imageUrl = results[i].image_url;
                 // console.log(imageUrl);
                 // restaurantImage.attr("src", imageUrl);
-                var restaurantImageDiv = $(`<div class="col-sm-4"><img src="${imageUrl}" style="width:100%"></div>`)
+                var restaurantImageDiv = $(`<div class="col-sm-4"><img class="yelp-images" src="${imageUrl}" style="width:100%"></div>`)
 
-                var longituden = results[i].coordinates.longitude
+                var longitude = results[i].coordinates.longitude
                 // console.log(longitude);
-                var latitude = results[i].coordinates.latitude 
+                var latitude = results[i].coordinates.latitude
                 // console.log(latitude);
 
                 var businessesSearchResults = $("<div class='col-md-8'>");
@@ -145,19 +137,19 @@ $(document).ready(function() {
 
                 var website = results[i].url;
                 // console.log(website);
-                var website5 = $("<p>").text("Website: " + website);
+                var website5 = $("<a>").text("Website: " + website);
                 businessesSearchResults.append(website5);
                 // console.log(website5);
 
                 var transactions = results[i].transactions
                 // console.log(transactions);
 
-                
+
                 // Display the results in HTML -->
-                newRow = $("<div class='row'>")
+                newRow = $("<div class='row'>");
                 newRow.append(restaurantImageDiv);
-                newRow.append(businessesSearchResults)
-                newRow.append("<hr>")
+                newRow.append(businessesSearchResults);
+                newRow.append("<hr><hr><hr>");
                 $("#content").append(newRow);
 
 
@@ -168,45 +160,3 @@ $(document).ready(function() {
     }
 
 });
-
-
-
-        // FOR TESTING PURPOSES ONLY
-        // var results = [
-        //     {
-        //         "id": "piedmont-park-atlanta",
-        //         "name": "Piedmont Park",
-        //         "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/j8BgppVxi8qylg6dAyRFcw/o.jpg",
-        //         "is_closed": false,
-        //         "url": "https://www.yelp.com/biz/piedmont-park-atlanta?adjust_creative=VPVrprQ1AAtld3icNNC7Zw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=VPVrprQ1AAtld3icNNC7Zw",
-        //         "review_count": 390,
-        //         "categories": [
-        //             {
-        //                 "alias": "parks",
-        //                 "title": "Parks"
-        //             }
-        //         ],
-        //         "rating": 4.5,
-        //         "coordinates": {
-        //             "latitude": 33.7862406671047,
-        //             "longitude": -84.3706085532904
-        //         },
-        //         "transactions": [],
-        //         "location": {
-        //             "address1": "400 Park Dr",
-        //             "address2": "",
-        //             "address3": "",
-        //             "city": "Atlanta",
-        //             "zip_code": "30306",
-        //             "country": "US",
-        //             "state": "GA",
-        //             "display_address": [
-        //                 "400 Park Dr",
-        //                 "Atlanta, GA 30306"
-        //             ]
-        //         },
-        //         "phone": "+14048757275",
-        //         "display_phone": "(404) 875-7275",
-        //         "distance": 3052.5100123099996
-        //     }
-        // ];

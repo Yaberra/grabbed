@@ -32,6 +32,7 @@ h4 {
 
 #map {
     margin-top: 50px;
+    margin-left: 90px;
     height: 300px;
     width: 600px;
     border: 2px solid;
@@ -53,6 +54,7 @@ h3 {
 #content {
 
     display: inline-block;
+
 }
 
 
@@ -70,16 +72,41 @@ h5 {
     text-align: center
 }
 
-content {
+#content {
 
     padding-left: 100px;
     display: inline-block;
+    border-color: rgb(145, 204, 65);
+    border:
 }
 
-.restuarant {
+.yelp-images {
 
-    width: 100px;
-    height: 100px;
+    height: 200px;
+    width: 150px;
     background-color: rgb(251, 43, 100);
-    
+/*    display: inline-block;*/
+    margin-left: 0;
+    margin-bottom: 20px;
     }
+
+.search-results {
+/*border-color: rgb(145, 204, 65);
+    border: 2px solid;*/
+
+}
+
+p{ 
+    word-wrap: break-word;
+   font-family: 'PT Sans', sans-serif;
+   font-size: 18px;
+}
+
+a{
+     word-wrap: break-word;
+}
+.col-md-8 {
+    border-color: #D3D3D3;
+    border: 2px solid;
+
+}

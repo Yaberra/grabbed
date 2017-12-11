@@ -91,9 +91,11 @@ $(document).ready(function() {
             results = res.businesses;
 
             for (var i = 0; i < results.length; i++) {
+
                var coorObj = results[i].coordinates
              
             
+                // console.log(results[i].coordinates)
                 var restaurantImage = $("<img>");
                 marker = new google.maps.Marker({
             position: new google.maps.LatLng(coorObj.latitude, coorObj.longitude),
@@ -107,9 +109,9 @@ $(document).ready(function() {
             }
         })(marker, i));
                 var imageUrl = results[i].image_url;
-                console.log(imageUrl);
-                restaurantImage.attr("src", imageUrl);
-                
+                // console.log(imageUrl);
+                // restaurantImage.attr("src", imageUrl);
+                var restaurantImageDiv = $(`<div class="col-sm-4"><img src="${imageUrl}" style="width:100%"></div>`)
 
                 var longituden = results[i].coordinates.longitude
                 // console.log(longitude);
@@ -152,9 +154,11 @@ $(document).ready(function() {
 
                 
                 // Display the results in HTML -->
-
-                $("#restuarantImage").append(restaurantImage);
-                $("#content").append(businessesSearchResults);
+                newRow = $("<div class='row'>")
+                newRow.append(restaurantImageDiv);
+                newRow.append(businessesSearchResults)
+                newRow.append("<hr>")
+                $("#content").append(newRow);
 
 
                 //Create a URL to access Open Table forms to make a reservation

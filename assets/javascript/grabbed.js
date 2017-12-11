@@ -6,6 +6,7 @@ $(document).ready(function() {
 
     var map, infoWindow, pos; 
     var resultsArray = [];
+    var locations =[]
 
     function initMap(lat, lng) {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -35,6 +36,9 @@ $(document).ready(function() {
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
+
+
+
     }
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -84,18 +88,30 @@ $(document).ready(function() {
 
         $.ajax(settings).done(res => {
             console.log(res);
-            var results = res.businesses;
+            results = res.businesses;
 
             for (var i = 0; i < results.length; i++) {
-                console.log(results[i].coordinates)
+               var coorObj = results[i].coordinates
+             
+            
                 var restaurantImage = $("<img>");
+                marker = new google.maps.Marker({
+            position: new google.maps.LatLng(coorObj.latitude, coorObj.longitude),
+            map: map
+        });
 
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+            return function () {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+            }
+        })(marker, i));
                 var imageUrl = results[i].image_url;
                 console.log(imageUrl);
                 restaurantImage.attr("src", imageUrl);
                 
 
-                var longitude = results[i].coordinates.longitude
+                var longituden = results[i].coordinates.longitude
                 // console.log(longitude);
                 var latitude = results[i].coordinates.latitude 
                 // console.log(latitude);

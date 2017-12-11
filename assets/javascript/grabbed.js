@@ -142,7 +142,9 @@ $(document).ready(function() {
                 // console.log(website5);
 
                 var transactions = results[i].transactions
-                // console.log(transactions);
+                var transactions6 =$("<p>").text("Order and booking: " + transactions);
+                businessesSearchResults.append(transactions6);
+                console.log(transactions);
 
 
                 // Display the results in HTML -->

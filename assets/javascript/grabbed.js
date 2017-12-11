@@ -95,7 +95,7 @@ $(document).ready(function() {
              
             
                 var restaurantImage = $("<img>");
-                marker = new google.maps.Marker({
+                var marker = new google.maps.Marker({
             position: new google.maps.LatLng(coorObj.latitude, coorObj.longitude),
             map: map
         });

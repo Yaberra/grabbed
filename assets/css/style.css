@@ -83,12 +83,13 @@ h5 {
 .yelp-images {
 
     height: 200px;
-    width: 150px;
     background-color: rgb(251, 43, 100);
 /*    display: inline-block;*/
     margin-left: 0;
     margin-bottom: 20px;
-    }
+    background-size: cover;
+    background-position: center center;
+}
 
 .search-results {
 /*border-color: rgb(145, 204, 65);
@@ -100,6 +101,7 @@ p{
     word-wrap: break-word;
    font-family: 'PT Sans', sans-serif;
    font-size: 18px;
+   margin-bottom: 20px;
 }
 
 a{
@@ -110,3 +112,4 @@ a{
     border: 2px solid;
 
 }
+

@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Grabbed</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
@@ -15,42 +16,49 @@
 </head>
 
 <body>
-    <img src="./assets/images/utensils.jpeg " id="backgroundImage" style="z-index: -1; height: 1500px;>
-    /*<!-- Logo and navbar -->*/
+    <img src="./assets/images/utensils.jpeg " id="backgroundImage" style="z-index: -1; height: 1500px;"> /*
+    <!-- Logo and navbar -->*/
     <nav class="navbar navbar-default navbar-fixed-top">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="mainnavbar">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="mainnavbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            </button>
-            
-        <div a class="navbar-brand pull-left"><strong><h1>Grabbed</h1></strong></div>
-            <div class="navbar-collapse collapse navbar-responsive-collapse">
-                <ul class="nav navbar-nav pull-right"> 
-                    <li class="active"></li>
-                    <li><a href="#"><h4>Make a Reservation</h4></a></li>
-                </ul>
-            </div>
-        </div>  
+        </button>
+
+        <div a class="navbar-brand pull-left">
+            <strong>
+                <h1>Grabbed</h1>
+            </strong>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li class="active"></li>
+                <li>
+                    <a href="#">
+                        <h4>Make a Reservation</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
     </nav>
-<!-- create div to display search results -->
-<div class="container">
-    <div id="map">
-        <img id="image" src="./assets/images/pizza-location.png" style="width:50px; align-items:center;">
-        <h3>Click to find restaurant near you</h3>
+    <!-- create div to display search results -->
+    <div class="container">
+        <div id="map">
+            <img id="image" src="./assets/images/pizza-location.png" style="width:50px; align-items:center;">
+            <h3>Click to find restaurant near you</h3>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-12" id="content" style="font:white"></div>
+        </div>
     </div>
-    <br>
-    <br>
-    <div class="row">
-        <div class="col-md-12" id="content" style="font:white"></div>
-    </div>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcDlEP58ISYqupag5wJvKrcgjlf8g28CA" type="text/javascript"></script>
     <script src="./assets/javascript/grabbed.js"></script>
-    
-    </body>
+
+</body>
+
 </html>
-
-
-

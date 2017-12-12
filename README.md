@@ -1,24 +1,25 @@
 # grabbed
 
-This application allows the user to find a restaurant near them and make a reservation.
+This application allows the user to find a restaurant near by, check on wait times and make a reservation.
 
 USER STORY:
 -----------------------------------------------------------------------------------------
 
-* As a user I want the app to know where I am  
+* As a user I want the app to find my location.  
 * And show me restaurants conveniently located near me
-* I quickly want to see the type of restaurant, food, address, zip code, price rating any exclusive offers/special rate and a link to the restaurants website. 
+* I quickly want to see the address, zip code, price, website and information on wait times and link to make a reservations. 
 
 * If I decide to make a reservation I want to be able to enter my personal information and book a table. 
 -----------------------------------------------------------------------------------------------
 
 PROGRAMMING 
 
-- This is a web-based mobile application  that will use the Yelp and OpenTable API’s. 
+- This is a web-based mobile application, with the mobile first mindest that capitalizes on micro moments. 
+- The user is prompted to allow Google API to find the user's location. 
+- The google API location information is then passed through a YELP API Ajax call to identify the nearest restaurants. 
+- Restuarant locations are displayed on google maps using google's location marker 
 
-- New library or technology user Geo-location restaurant finder 
-
-- It’s a simple application that will be built using HTML, CSS, JavaScript, jQuery, AJAX and JSON. 
+- The user has the ability to book restaurant of choice. 
 ------------------------------------------------------------------------------------------------
 
 RUNNING THE APPLICATION 
@@ -27,12 +28,12 @@ RUNNING THE APPLICATION
 
 - If user confirms the app will access the location of the user 
 
-- Based on location of the user access the app will access Yelp API to pull data for restaurants closest to the user
+- The google api uses longitude and latitude locators. This is passed through the Yelp API Ajax query to identify 15 restaurants close to the user's location. 
 
-- The app will use the database to access and store the specifics like data, image, rating, address, type, price, special offers, and website link to restaurant 
+-  We've defined the business listing as res in our function. We use the data to The app will use the database to access and store key elements - address, image, rating, address, price, website and booking. 
 
-- The app will Display TOP 10 choices based on proximity to user with additional data as well as a link to make a reservation
+- The app will Display TOP 15 choices based on proximity to user.
 
-- If a user decides to make a reservation a button is included for Open Table API forms to enter personal information and book a table.  
+- Using the dot notation, we created variables to pull key elements from the business array and appended to the div in the html for display.   
 
 Team members: StaShaun, Austin, Yeti

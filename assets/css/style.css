@@ -1,28 +1,28 @@
 body {
-   
+
 }
 
-h1 { 
+h1 {
 
-    color:#696969;
+    font:color: #696969;
     font-family: 'Fascinate Inline', cursive;
     font-size: 70px;
     display: inline-block;
     margin-top: -15px;
     margin-left: 180px;
-   
+    background-color: rgb(145, 204, 65);
 }
 
 h4 {
     display: inline-block;
     margin-bottom: 15;
-    color:#696969;
+    color: #696969;
     color: rgb(145, 204, 65);
 }
 
 #backgroundImage {
     width: 100%;
-    height: 100%;
+    height: 400px;
     position: absolute;
 }
 
@@ -31,10 +31,10 @@ h4 {
 }
 
 #map {
-    margin-top: 50px;
-    margin-left: 90px;
-    height: 300px;
-    width: 600px;
+    margin-top: 40px;
+    margin-left: 80px;
+    height: 500px;
+    width: 650px;
     border: 2px solid;
     color: rgb(145, 204, 65);
 }
@@ -48,13 +48,11 @@ h3 {
 #image {
     display: inline-block;
     border-image: 2px solid color:#696969;
-    
 }
 
 #content {
 
     display: inline-block;
-
 }
 
 
@@ -77,36 +75,39 @@ h5 {
     padding-left: 100px;
     display: inline-block;
     border-color: rgb(145, 204, 65);
-    border:
+    background-color: rgbrgb(220,220,220);
+    margin-top:50px;
+    margin-left: 10;
 }
 
 .yelp-images {
 
     height: 200px;
-    width: 150px;
     background-color: rgb(251, 43, 100);
-/*    display: inline-block;*/
+    /*    display: inline-block;*/
     margin-left: 0;
     margin-bottom: 20px;
-    }
+    background-size: cover;
+    background-position: center center;
+}
 
 .search-results {
-/*border-color: rgb(145, 204, 65);
+    /*border-color: rgb(145, 204, 65);
     border: 2px solid;*/
-
 }
 
-p{ 
+p {
     word-wrap: break-word;
-   font-family: 'PT Sans', sans-serif;
-   font-size: 18px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-a{
-     word-wrap: break-word;
+a {
+    word-wrap: break-word;
 }
+
 .col-md-8 {
     border-color: #D3D3D3;
     border: 2px solid;
-
 }

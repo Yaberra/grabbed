@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     function initMap(lat, lng) {
         map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 6
+            zoom: 12
         });
         infoWindow = new google.maps.InfoWindow;
 
@@ -48,11 +48,10 @@ $(document).ready(function() {
     }
     initMap();
 
-    $(document).on('click', function() {
-        console.log(pos)
+    // $(document).on('click', function() {
+    //     console.log(pos)
 
-    })
-
+    // })
 
     // Make an AJAX call to Yelp to locate restaurants closest to the google api location indicator 
     // We need to pass the google api location data to get restaurant location
@@ -83,9 +82,9 @@ $(document).ready(function() {
             results = res.businesses;
 
             for (var i = 0; i < results.length; i++) {
-
-                var coorObj = results[i].coordinates
-
+                // console.log(results[i])
+                var coorObj = results[i].coordinates;
+                // console.log(coorObj);
 
                 // console.log(results[i].coordinates)
                 var restaurantImage = $("<img>");
@@ -93,17 +92,20 @@ $(document).ready(function() {
                     position: new google.maps.LatLng(coorObj.latitude, coorObj.longitude),
                     map: map
                 });
-
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
                     return function() {
-                        infowindow.setContent(locations[i][0]);
-                        infowindow.open(map, marker);
+                        infoWindow.setContent(results[i].name);
+                        infoWindow.open(map, marker);
                     }
                 })(marker, i));
                 var imageUrl = results[i].image_url;
                 // console.log(imageUrl);
                 // restaurantImage.attr("src", imageUrl);
-                var restaurantImageDiv = $(`<div class="col-sm-4"><img class="yelp-images" src="${imageUrl}" style="width:100%"></div>`)
+                var restaurantImageDiv = $(`
+                    <div class="col-sm-4">
+                        <div class="yelp-images" style="background-image: url(${imageUrl});"></div>
+                    </div>
+                `)
 
                 var longitude = results[i].coordinates.longitude
                 // console.log(longitude);
@@ -142,9 +144,9 @@ $(document).ready(function() {
                 // console.log(website5);
 
                 var transactions = results[i].transactions
-                var transactions6 =$("<p>").text("Order and booking: " + transactions);
+                var transactions6 = $("<p>").text("Order and booking: " + transactions);
                 businessesSearchResults.append(transactions6);
-                console.log(transactions);
+                // console.log(transactions);
 
 
                 // Display the results in HTML -->

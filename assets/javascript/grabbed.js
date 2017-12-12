@@ -144,7 +144,7 @@ $(document).ready(function() {
                 // console.log(website5);
 
                 var transactions = results[i].transactions
-                var transactions6 =$("<p>").text("Order and booking: " + transactions);
+                var transactions6 = $("<p>").text("Order and booking: " + transactions);
                 businessesSearchResults.append(transactions6);
                 // console.log(transactions);
 
@@ -164,4 +164,3 @@ $(document).ready(function() {
     }
 
 });
-
